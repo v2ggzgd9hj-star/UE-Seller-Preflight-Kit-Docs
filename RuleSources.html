@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RuleSources | UE Seller Preflight Kit</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#050608;color:#d7dde7;font-family:Segoe UI,Arial,sans-serif;line-height:1.58}.page{max-width:980px;margin:0 auto;padding:42px 22px 72px}.top{border-bottom:1px solid #28303a;margin-bottom:28px;padding-bottom:18px}.top a{color:#58a6ff;text-decoration:none}.top a:hover{text-decoration:underline}h1,h2,h3,h4{color:#f4f7fb;line-height:1.22}h1{font-size:2.05rem;margin:0 0 12px}h2{margin-top:34px;border-bottom:1px solid #28303a;padding-bottom:8px}h3{margin-top:26px}p{margin:13px 0}a{color:#58a6ff}a:hover{color:#8cc7ff}ul,ol{padding-left:25px}li{margin:7px 0}code{background:#161b22;color:#f0f6fc;border:1px solid #28303a;border-radius:4px;padding:1px 5px}pre{background:#0d1117;border:1px solid #303845;border-radius:7px;overflow:auto;padding:14px}pre code{background:transparent;border:0;padding:0}.note{border:1px solid #303845;background:#10141b;border-radius:8px;padding:14px 16px}table{border-collapse:collapse;width:100%;margin:18px 0;background:#0b0f14}th,td{border:1px solid #303845;padding:9px 10px;vertical-align:top}th{background:#101824;color:#f4f7fb}tr:nth-child(even) td{background:#10141b}blockquote{border-left:4px solid #303845;color:#aab4c3;margin:18px 0;padding:4px 0 4px 16px}.footer{margin-top:42px;border-top:1px solid #28303a;padding-top:16px;color:#8b949e;font-size:.92rem}@media(max-width:720px){.page{padding:28px 16px 54px}h1{font-size:1.65rem}table{font-size:.92rem}}
+</style>
+</head>
+<body>
+<main class="page">
+<div class="top"><a href="index.html">UE Seller Preflight Kit Documentation</a></div>
+<p># Rule Sources</p>
+<p>Version: 1.0.0 Publisher: Toolsmith Studio Support: toolsmithstudio@proton.me Tested environment: Windows / Win64 with Unreal Engine 5.7.4</p>
+<p>Every scan result includes a source reference. A source reference tells you which buyer-facing note explains why the finding exists and how to interpret it.</p>
+<p>Source references are not approval certificates. They are short pointers for review. Always verify current marketplace requirements before final submission.</p>
+<h2>Source Reference Files</h2>
+<ul>
+<li><code>Docs/RuleReference.md</code>: rule categories, severities, examples, safe fix approach, and current rule IDs.</li>
+<li><code>Docs/RuleSources.md</code>: public-requirement areas and how the plugin uses them.</li>
+<li><code>Docs/KnownLimitations.md</code>: product limits, heuristic checks, and report-only behavior.</li>
+<li><code>Docs/Troubleshooting.md</code>: practical scan/export failure handling.</li>
+</ul>
+<h2>Public Requirement Areas Used By V1</h2>
+<p>The V1 checks are based on public Unreal Engine marketplace/Fab preparation themes recorded for this product:</p>
+<table><thead><tr><th>Area</th><th>How the plugin uses it</th></tr></thead><tbody><tr><td>Code plugin structure</td><td>Code plugin roots are expected to have a <code>.uplugin</code>, <code>Source/</code>, <code>Content/</code>, <code>Config/</code>, and at least one code module.</td></tr><tr><td>Content project structure</td><td>Content product candidates are expected to be Unreal projects with <code>.uproject</code>, <code>Content/</code>, and <code>Config/</code>.</td></tr><tr><td>Pack folder organization</td><td>Content products are easier to review and package when product content sits under one top-level pack folder.</td></tr><tr><td>Plugin metadata</td><td><code>.uplugin</code> files should parse as JSON and contain clear name, description, category, version, and module metadata.</td></tr><tr><td>Naming hygiene</td><td>File and folder names should be consistent, descriptive, and safe for Unreal workflows. The plugin flags spaces, non-ASCII names, unusual symbols, numeric-only names, and obvious placeholders for review.</td></tr><tr><td>Redirectors</td><td>Redirector assets are packaging hygiene findings. V1 reports them only and tells users to use Unreal Editor's normal fix-up workflow manually.</td></tr><tr><td>Documentation readiness</td><td>Buyer/reviewer docs should explain installation, usage, rules/features, limitations, support, and version changes.</td></tr><tr><td>Listing support</td><td>Media checklists, technical details, version notes, and demo/overview notes help prepare a clear listing. Some listing helpers are review prompts, not mandatory claims.</td></tr></tbody></table>
+<h2>Safe Interpretation</h2>
+<ul>
+<li>Blockers and errors should be reviewed before packaging a release candidate.</li>
+<li>Warnings are review prompts. Some may be acceptable after manual review.</li>
+<li>Info results provide context or reminders.</li>
+<li>Suggested fixes are intentionally non-destructive. The plugin does not delete, rename, move, save, or fix assets automatically during scan/export.</li>
+</ul>
+<div class="footer">Independent Toolsmith Studio documentation. No affiliation with Epic Games, Unreal Engine, or Fab. No approval guarantee.</div>
+</main>
+</body>
+</html>

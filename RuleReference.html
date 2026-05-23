@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RuleReference | UE Seller Preflight Kit</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#050608;color:#d7dde7;font-family:Segoe UI,Arial,sans-serif;line-height:1.58}.page{max-width:980px;margin:0 auto;padding:42px 22px 72px}.top{border-bottom:1px solid #28303a;margin-bottom:28px;padding-bottom:18px}.top a{color:#58a6ff;text-decoration:none}.top a:hover{text-decoration:underline}h1,h2,h3,h4{color:#f4f7fb;line-height:1.22}h1{font-size:2.05rem;margin:0 0 12px}h2{margin-top:34px;border-bottom:1px solid #28303a;padding-bottom:8px}h3{margin-top:26px}p{margin:13px 0}a{color:#58a6ff}a:hover{color:#8cc7ff}ul,ol{padding-left:25px}li{margin:7px 0}code{background:#161b22;color:#f0f6fc;border:1px solid #28303a;border-radius:4px;padding:1px 5px}pre{background:#0d1117;border:1px solid #303845;border-radius:7px;overflow:auto;padding:14px}pre code{background:transparent;border:0;padding:0}.note{border:1px solid #303845;background:#10141b;border-radius:8px;padding:14px 16px}table{border-collapse:collapse;width:100%;margin:18px 0;background:#0b0f14}th,td{border:1px solid #303845;padding:9px 10px;vertical-align:top}th{background:#101824;color:#f4f7fb}tr:nth-child(even) td{background:#10141b}blockquote{border-left:4px solid #303845;color:#aab4c3;margin:18px 0;padding:4px 0 4px 16px}.footer{margin-top:42px;border-top:1px solid #28303a;padding-top:16px;color:#8b949e;font-size:.92rem}@media(max-width:720px){.page{padding:28px 16px 54px}h1{font-size:1.65rem}table{font-size:.92rem}}
+</style>
+</head>
+<body>
+<main class="page">
+<div class="top"><a href="index.html">UE Seller Preflight Kit Documentation</a></div>
+<p># Rule Reference</p>
+<p>This reference explains the UE Seller Preflight Kit 1.0.0 rule categories. Exported reports are versioned guidance for the installed plugin version.</p>
+<p>Publisher: Toolsmith Studio Support: toolsmithstudio@proton.me Tested environment: Windows / Win64 with Unreal Engine 5.7.4</p>
+<p>UE Seller Preflight Kit is independent and unofficial. Results are local guidance only and do not guarantee Fab approval.</p>
+<h2>Severities</h2>
+<table><thead><tr><th>Severity</th><th>Meaning</th><th>Typical response</th></tr></thead><tbody><tr><td>Blocker</td><td>The scan target or input is unusable, or a manifest cannot be parsed.</td><td>Fix before relying on later results.</td></tr><tr><td>Error</td><td>A required structure or manifest issue is likely to block packaging or review readiness.</td><td>Fix before packaging a release candidate.</td></tr><tr><td>Warning</td><td>A hygiene, documentation, listing, or review issue needs attention.</td><td>Review and fix when relevant.</td></tr><tr><td>Info</td><td>Context or review reminder.</td><td>Read and decide whether action is needed.</td></tr></tbody></table>
+<h2>Rule Areas</h2>
+<table><thead><tr><th>Rule area</th><th>What it checks</th><th>Typical severity</th><th>Fix approach</th><th>Limitation</th></tr></thead><tbody><tr><td>Target classification</td><td>Whether the scan path exists and looks like an Unreal project or code plugin root.</td><td>Blocker for missing/invalid paths; Info for recognized targets.</td><td>Choose a folder containing a <code>.uproject</code> or <code>.uplugin</code>, or use <code>Current Project</code>.</td><td>Classification does not prove the product is ready; later rules handle details.</td></tr><tr><td>Structure</td><td>Required plugin/project layout. Code plugin structure checks include <code>.uplugin</code>, <code>Source</code>, <code>Content</code>, <code>Config</code>, and at least one code module. Content product checks include <code>.uproject</code>, <code>Content</code>, and <code>Config</code>; content should be under one top-level pack folder.</td><td>Error or Blocker for missing required items.</td><td>Add missing folders/manifests/modules manually and rescan.</td><td>It checks filesystem shape, not whether every asset inside is useful.</td></tr><tr><td>Metadata</td><td><code>.uplugin</code> JSON parsing, required metadata fields, module type, and <code>EnabledByDefault</code> review.</td><td>Blocker for invalid JSON; Error for missing modules or non-Editor module review; Warning for missing fields; Info for <code>EnabledByDefault</code>.</td><td>Fix the manifest in source control and rebuild/package.</td><td>It does not validate every possible Unreal plugin descriptor field.</td></tr><tr><td>Naming hygiene</td><td>File and folder names using ASCII letters, numbers, underscores, and hyphens; spaces; non-ASCII characters; invalid symbols; number-only names.</td><td>Warning.</td><td>Rename through Unreal Editor or normal source-control workflows so references stay intact.</td><td>It cannot fully judge English wording or descriptive intent.</td></tr><tr><td>Placeholder names</td><td>Obvious placeholder names such as <code>NewFolder</code>, <code>Untitled</code>, <code>Temp</code>, <code>Test</code>, <code>Copy</code>, <code>Placeholder</code>, <code>Example</code>, and <code>Default</code>.</td><td>Warning.</td><td>Replace placeholder names with specific product, feature, or asset names.</td><td>Some placeholder-like names may be intentional; review manually.</td></tr><tr><td>Redirectors</td><td><code>UObjectRedirector</code> assets discovered under scanned content package paths. Redirectors are packaging hygiene findings.</td><td>Warning.</td><td>Use Unreal Editor's normal Content Browser Fix Up Redirectors workflow manually after review.</td><td>V1 reports redirectors only. It does not fix, save, delete, or modify assets.</td></tr><tr><td>Folder hygiene</td><td>Empty folders and generated/output folders such as <code>Saved</code>, <code>Intermediate</code>, <code>DerivedDataCache</code>, <code>.vs</code>, <code>Binaries</code>, report folders, and packaged output folders.</td><td>Warning.</td><td>Review release package contents and remove accidental output manually outside the scan.</td><td>Empty folders can be intentional; the tool only flags them for review.</td></tr><tr><td>Documentation readiness</td><td>Expected buyer docs such as README, QuickStart, RuleReference or FeatureReference, Changelog, KnownIssues or KnownLimitations, support/contact information, and unofficial/no-guarantee wording.</td><td>Warning.</td><td>Add or complete documentation. Use <code>Generate Doc Template</code> only after selecting a documentation result and confirming the write.</td><td>The tool checks presence and basic text signals; it cannot judge full documentation quality.</td></tr><tr><td>Listing helpers</td><td>Demo script review, media checklist, technical details, and version notes. For Tools &amp; Plugins, a demo map is not required by default unless demonstrable elements exist.</td><td>Info or Warning.</td><td>Add review files such as <code>Docs/DemoScript.md</code>, <code>Listing/MediaChecklist.md</code>, <code>Listing/TechnicalDetails.md</code>, and <code>Listing/VersionNotes.md</code> when relevant.</td><td>These are listing-support reminders, not mandatory claims unless backed by current marketplace requirements.</td></tr></tbody></table>
+<h2>Appendix: Current Rule IDs</h2>
+<p>The current source includes these rule IDs:</p>
+<ul>
+<li><code>SPK.PATH.TARGET_CLASSIFICATION</code></li>
+<li><code>SPK.PATH.TARGET_MISSING</code></li>
+<li><code>SPK.PATH.TARGET_INVALID</code></li>
+<li><code>SPK.PATH.TARGET_UNCLASSIFIED</code></li>
+<li><code>SPK.STRUCTURE.REQUIRED_LAYOUT</code></li>
+<li><code>SPK.STRUCTURE.PLUGIN_MANIFEST</code></li>
+<li><code>SPK.STRUCTURE.PLUGIN_REQUIRED_DIRS</code></li>
+<li><code>SPK.STRUCTURE.PLUGIN_MODULE</code></li>
+<li><code>SPK.STRUCTURE.MODULE_LAYOUT</code></li>
+<li><code>SPK.STRUCTURE.PROJECT_MANIFEST</code></li>
+<li><code>SPK.STRUCTURE.PROJECT_REQUIRED_DIRS</code></li>
+<li><code>SPK.STRUCTURE.CONTENT_PACK_ROOT</code></li>
+<li><code>SPK.METADATA.UPLUGIN</code></li>
+<li><code>SPK.METADATA.UPLUGIN_JSON</code></li>
+<li><code>SPK.METADATA.UPLUGIN_REQUIRED_FIELDS</code></li>
+<li><code>SPK.METADATA.MODULE_TYPE</code></li>
+<li><code>SPK.METADATA.ENABLED_BY_DEFAULT</code></li>
+<li><code>SPK.HYGIENE.NAMING</code></li>
+<li><code>SPK.HYGIENE.PLACEHOLDER_NAME</code></li>
+<li><code>SPK.HYGIENE.REDIRECTOR</code></li>
+<li><code>SPK.HYGIENE.FOLDER</code></li>
+<li><code>SPK.HYGIENE.EMPTY_FOLDER</code></li>
+<li><code>SPK.HYGIENE.RELEASE_JUNK_FOLDER</code></li>
+<li><code>SPK.DOCS.READINESS</code></li>
+<li><code>SPK.DOCS.REQUIRED_FILES</code></li>
+<li><code>SPK.DOCS.SUPPORT_CONTACT</code></li>
+<li><code>SPK.DOCS.UNOFFICIAL_DISCLAIMER</code></li>
+<li><code>SPK.LISTING.READINESS</code></li>
+<li><code>SPK.LISTING.DEMO_REVIEW</code></li>
+<li><code>SPK.LISTING.SUPPORT_FILES</code></li>
+</ul>
+<h2>Source References</h2>
+<p>Every result includes a source reference. References may point to:</p>
+<ul>
+<li><code>Docs/RuleReference.md</code></li>
+<li><code>Docs/RuleSources.md</code></li>
+<li><code>Docs/KnownLimitations.md</code></li>
+<li><code>Docs/Troubleshooting.md</code></li>
+</ul>
+<p>Where rules mention marketplace requirements, the wording is summarized in <code>Docs/RuleSources.md</code>. Always verify current public requirements before submission.</p>
+<div class="footer">Independent Toolsmith Studio documentation. No affiliation with Epic Games, Unreal Engine, or Fab. No approval guarantee.</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KnownLimitations | UE Seller Preflight Kit</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#050608;color:#d7dde7;font-family:Segoe UI,Arial,sans-serif;line-height:1.58}.page{max-width:980px;margin:0 auto;padding:42px 22px 72px}.top{border-bottom:1px solid #28303a;margin-bottom:28px;padding-bottom:18px}.top a{color:#58a6ff;text-decoration:none}.top a:hover{text-decoration:underline}h1,h2,h3,h4{color:#f4f7fb;line-height:1.22}h1{font-size:2.05rem;margin:0 0 12px}h2{margin-top:34px;border-bottom:1px solid #28303a;padding-bottom:8px}h3{margin-top:26px}p{margin:13px 0}a{color:#58a6ff}a:hover{color:#8cc7ff}ul,ol{padding-left:25px}li{margin:7px 0}code{background:#161b22;color:#f0f6fc;border:1px solid #28303a;border-radius:4px;padding:1px 5px}pre{background:#0d1117;border:1px solid #303845;border-radius:7px;overflow:auto;padding:14px}pre code{background:transparent;border:0;padding:0}.note{border:1px solid #303845;background:#10141b;border-radius:8px;padding:14px 16px}table{border-collapse:collapse;width:100%;margin:18px 0;background:#0b0f14}th,td{border:1px solid #303845;padding:9px 10px;vertical-align:top}th{background:#101824;color:#f4f7fb}tr:nth-child(even) td{background:#10141b}blockquote{border-left:4px solid #303845;color:#aab4c3;margin:18px 0;padding:4px 0 4px 16px}.footer{margin-top:42px;border-top:1px solid #28303a;padding-top:16px;color:#8b949e;font-size:.92rem}@media(max-width:720px){.page{padding:28px 16px 54px}h1{font-size:1.65rem}table{font-size:.92rem}}
+</style>
+</head>
+<body>
+<main class="page">
+<div class="top"><a href="index.html">UE Seller Preflight Kit Documentation</a></div>
+<p># Known Limitations</p>
+<p>Version: 1.0.0 Publisher: Toolsmith Studio Support: toolsmithstudio@proton.me Tested environment: Windows / Win64 with Unreal Engine 5.7.4</p>
+<p>UE Seller Preflight Kit is independent and unofficial. It is not affiliated with Epic Games, Unreal Engine, or Fab. It does not guarantee approval and does not replace the current requirements published by the marketplace.</p>
+<p>The plugin runs locally in Unreal Editor. Normal scan/export does not modify assets or packages. The plugin does not upload project files, call AI services, use cloud services, or intentionally collect telemetry.</p>
+<h2>Product Limits</h2>
+<ul>
+<li>Generated reports are guidance/checklists, not approval certificates.</li>
+<li>The plugin does not submit listings or upload project files.</li>
+<li>Documentation and listing checks are heuristic. They can tell whether expected files or text signals exist, but they cannot judge whether every document is complete or persuasive.</li>
+<li>Naming checks can find spaces, non-ASCII names, symbols, numeric-only names, and obvious placeholder names. They cannot fully judge whether a name is descriptive English.</li>
+<li>Redirectors are report-only in V1. Use Unreal Editor's normal Content Browser Fix Up Redirectors workflow manually after reviewing the warning.</li>
+<li>The plugin does not judge listing media quality, image composition, trailer quality, or marketing strength.</li>
+<li>The plugin does not detect legal, licensing, trademark, copyright, tax, payout, or account issues.</li>
+<li>The plugin does not determine whether every asset is unused.</li>
+<li><code>Open Location</code> supports local file/folder paths only. Object paths such as <code>/Game/...</code> are not opened.</li>
+<li><code>Generate Doc Template</code> creates starter text only after confirmation and refuses overwrites. Replace template text with product-specific information before release.</li>
+</ul>
+<h2>How To Use These Limits</h2>
+<p>Treat findings as a structured review pass before packaging/submission. Fix clear structure and manifest issues first, then use warnings as prompts for manual review. Always compare final decisions against current marketplace requirements.</p>
+<div class="footer">Independent Toolsmith Studio documentation. No affiliation with Epic Games, Unreal Engine, or Fab. No approval guarantee.</div>
+</main>
+</body>
+</html>

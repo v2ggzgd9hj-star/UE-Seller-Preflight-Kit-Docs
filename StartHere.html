@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StartHere | UE Seller Preflight Kit</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#050608;color:#d7dde7;font-family:Segoe UI,Arial,sans-serif;line-height:1.58}.page{max-width:980px;margin:0 auto;padding:42px 22px 72px}.top{border-bottom:1px solid #28303a;margin-bottom:28px;padding-bottom:18px}.top a{color:#58a6ff;text-decoration:none}.top a:hover{text-decoration:underline}h1,h2,h3,h4{color:#f4f7fb;line-height:1.22}h1{font-size:2.05rem;margin:0 0 12px}h2{margin-top:34px;border-bottom:1px solid #28303a;padding-bottom:8px}h3{margin-top:26px}p{margin:13px 0}a{color:#58a6ff}a:hover{color:#8cc7ff}ul,ol{padding-left:25px}li{margin:7px 0}code{background:#161b22;color:#f0f6fc;border:1px solid #28303a;border-radius:4px;padding:1px 5px}pre{background:#0d1117;border:1px solid #303845;border-radius:7px;overflow:auto;padding:14px}pre code{background:transparent;border:0;padding:0}.note{border:1px solid #303845;background:#10141b;border-radius:8px;padding:14px 16px}table{border-collapse:collapse;width:100%;margin:18px 0;background:#0b0f14}th,td{border:1px solid #303845;padding:9px 10px;vertical-align:top}th{background:#101824;color:#f4f7fb}tr:nth-child(even) td{background:#10141b}blockquote{border-left:4px solid #303845;color:#aab4c3;margin:18px 0;padding:4px 0 4px 16px}.footer{margin-top:42px;border-top:1px solid #28303a;padding-top:16px;color:#8b949e;font-size:.92rem}@media(max-width:720px){.page{padding:28px 16px 54px}h1{font-size:1.65rem}table{font-size:.92rem}}
+</style>
+</head>
+<body>
+<main class="page">
+<div class="top"><a href="index.html">UE Seller Preflight Kit Documentation</a></div>
+<p># Start Here</p>
+<p>UE Seller Preflight Kit is a local Unreal Engine 5 editor plugin for checking common project and code-plugin submission-readiness issues before you package your work.</p>
+<p>It is for Unreal Engine sellers, technical artists, solo developers, and small teams who want a practical local report for structure, metadata, naming, redirectors, documentation, listing support, and package hygiene.</p>
+<p>Version: 1.0.0 Publisher: Toolsmith Studio Support: toolsmithstudio@proton.me Tested environment: Windows / Win64 with Unreal Engine 5.7.4</p>
+<p>This plugin is independent and unofficial. It is not affiliated with Epic Games, Unreal Engine, or Fab. It does not guarantee Fab approval and does not replace the requirements published for Fab.</p>
+<h2>5-Step First Workflow</h2>
+<ol>
+<li>Install the plugin into your project <code>Plugins/UESellerPreflightKit</code> folder and enable it in Unreal Editor.</li>
+<li>Open <code>Tools &gt; UE Seller Preflight Kit</code>.</li>
+<li>Choose <code>Current Project</code>, <code>This Plugin</code>, or <code>Manual Path</code>.</li>
+<li>Click <code>Scan</code>, then select a result to read the details, suggested fix, and source reference.</li>
+<li>Choose an export folder and use <code>Export Markdown</code>, <code>Export CSV</code>, or <code>Export JSON</code>.</li>
+</ol>
+<h2>What To Read Next</h2>
+<ul>
+<li>New user: read <a href="QuickStart.html">QuickStart</a>.</li>
+<li>Understanding results: read <a href="RuleReference.html">RuleReference</a>.</li>
+<li>Something failed: read <a href="Troubleshooting.html">Troubleshooting</a>.</li>
+<li>Checking limits: read <a href="KnownLimitations.html">KnownLimitations</a>.</li>
+<li>Support and trust: read <a href="Support.html">Support</a> and <a href="AITransparency.html">AITransparency</a>.</li>
+</ul>
+<h2>Safety Notes</h2>
+<ul>
+<li>Normal scan/export is non-destructive.</li>
+<li>The plugin does not upload files.</li>
+<li>The plugin does not call AI services.</li>
+<li>The plugin does not use cloud services.</li>
+<li>The plugin does not intentionally collect telemetry.</li>
+<li>Redirectors are report-only in V1; use Unreal Editor's normal Content Browser Fix Up Redirectors workflow manually.</li>
+<li>Documentation template generation is explicit, confirmation-gated, and refuses overwrites.</li>
+<li>Export overwrite requires user opt-in through <code>Allow overwrite</code>.</li>
+<li>Reports are guidance/checklists, not approval certificates.</li>
+</ul>
+<div class="footer">Independent Toolsmith Studio documentation. No affiliation with Epic Games, Unreal Engine, or Fab. No approval guarantee.</div>
+</main>
+</body>
+</html>
