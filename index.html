@@ -3,30 +3,467 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>UE Seller Preflight Kit Documentation</title>
+<meta name="theme-color" content="#050608">
+<title>Documentation | UE Seller Preflight Kit</title>
 <style>
-:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#050608;color:#d7dde7;font-family:Segoe UI,Arial,sans-serif;line-height:1.58}.page{max-width:980px;margin:0 auto;padding:42px 22px 72px}.top{border-bottom:1px solid #28303a;margin-bottom:28px;padding-bottom:18px}.top a{color:#58a6ff;text-decoration:none}.top a:hover{text-decoration:underline}h1,h2,h3,h4{color:#f4f7fb;line-height:1.22}h1{font-size:2.05rem;margin:0 0 12px}h2{margin-top:34px;border-bottom:1px solid #28303a;padding-bottom:8px}h3{margin-top:26px}p{margin:13px 0}a{color:#58a6ff}a:hover{color:#8cc7ff}ul,ol{padding-left:25px}li{margin:7px 0}code{background:#161b22;color:#f0f6fc;border:1px solid #28303a;border-radius:4px;padding:1px 5px}pre{background:#0d1117;border:1px solid #303845;border-radius:7px;overflow:auto;padding:14px}pre code{background:transparent;border:0;padding:0}.note{border:1px solid #303845;background:#10141b;border-radius:8px;padding:14px 16px}table{border-collapse:collapse;width:100%;margin:18px 0;background:#0b0f14}th,td{border:1px solid #303845;padding:9px 10px;vertical-align:top}th{background:#101824;color:#f4f7fb}tr:nth-child(even) td{background:#10141b}blockquote{border-left:4px solid #303845;color:#aab4c3;margin:18px 0;padding:4px 0 4px 16px}.footer{margin-top:42px;border-top:1px solid #28303a;padding-top:16px;color:#8b949e;font-size:.92rem}@media(max-width:720px){.page{padding:28px 16px 54px}h1{font-size:1.65rem}table{font-size:.92rem}}
+:root{color-scheme:dark;background:#050608}html{background:#050608;scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:#050608;color:#d7dde7;font-family:Segoe UI,Arial,sans-serif;line-height:1.58}.layout{display:grid;grid-template-columns:260px minmax(0,1fr);min-height:100vh}.sidebar{position:sticky;top:0;height:100vh;overflow:auto;border-right:1px solid #28303a;background:#080a0e;padding:26px 20px}.brand{font-weight:700;color:#f4f7fb;font-size:1.05rem;line-height:1.25;margin-bottom:18px}.nav a{display:block;color:#9dc9ff;text-decoration:none;padding:7px 0;border-bottom:1px solid transparent}.nav a:hover{color:#d6ecff;border-bottom-color:#303845}.content{max-width:1040px;padding:42px 34px 78px}.hero{border:1px solid #303845;background:#10141b;border-radius:10px;padding:22px 24px;margin-bottom:34px}.section{padding-top:18px;margin-top:22px;border-top:1px solid #28303a}h1,h2,h3,h4{color:#f4f7fb;line-height:1.22}h1{font-size:2.1rem;margin:0 0 12px}h2{margin-top:32px;padding-bottom:8px}h3{margin-top:26px}p{margin:13px 0}a{color:#58a6ff}a:hover{color:#8cc7ff}ul,ol{padding-left:25px}li{margin:7px 0}code{background:#161b22;color:#f0f6fc;border:1px solid #28303a;border-radius:4px;padding:1px 5px}pre{background:#0d1117;border:1px solid #303845;border-radius:7px;overflow:auto;padding:14px}pre code{background:transparent;border:0;padding:0}.note{border:1px solid #303845;background:#10141b;border-radius:8px;padding:14px 16px}table{border-collapse:collapse;width:100%;margin:18px 0;background:#0b0f14}th,td{border:1px solid #303845;padding:9px 10px;vertical-align:top}th{background:#101824;color:#f4f7fb}tr:nth-child(even) td{background:#10141b}blockquote{border-left:4px solid #303845;color:#aab4c3;margin:18px 0;padding:4px 0 4px 16px}.footer{margin-top:42px;border-top:1px solid #28303a;padding-top:16px;color:#8b949e;font-size:.92rem}@media(max-width:880px){.layout{display:block}.sidebar{position:relative;height:auto;border-right:0;border-bottom:1px solid #28303a}.nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0 16px}.content{padding:30px 18px 58px}h1{font-size:1.7rem}table{font-size:.92rem}}
 </style>
 </head>
 <body>
-<main class="page">
-
-<h1>UE Seller Preflight Kit Documentation</h1>
-<p><strong>UE Seller Preflight Kit</strong> is an independent Unreal Engine editor plugin from Toolsmith Studio. It runs local checks against a project or plugin folder, shows actionable findings in the editor, and exports Markdown, CSV, and JSON reports for cleanup tracking.</p>
-<p class="note">This plugin is not affiliated with Epic Games, Unreal Engine, or Fab. It does not guarantee marketplace approval and does not replace the official requirements.</p>
-<h2>Start Here</h2>
+<div class="layout">
+<aside class="sidebar">
+<div class="brand">UE Seller Preflight Kit<br>Documentation</div>
+<nav class="nav"><a href="#start-here">Start Here</a>
+<a href="#quickstart">QuickStart</a>
+<a href="#rule-reference">Rule Reference</a>
+<a href="#rule-sources">Rule Sources</a>
+<a href="#known-limitations">Known Limitations</a>
+<a href="#troubleshooting">Troubleshooting</a>
+<a href="#support">Support</a>
+<a href="#ai-transparency">AI Transparency</a>
+<a href="#changelog">Changelog</a></nav>
+</aside>
+<main class="content">
+<div class="hero"><h1>UE Seller Preflight Kit Documentation</h1><p><strong>UE Seller Preflight Kit</strong> is an independent Unreal Engine editor plugin from Toolsmith Studio. It runs local checks against a project or plugin folder, shows actionable findings in the editor, and exports Markdown, CSV, and JSON reports for cleanup tracking.</p><p class="note">This plugin is not affiliated with Epic Games, Unreal Engine, or Fab. It does not guarantee marketplace approval and does not replace the official requirements.</p><p>Normal scan and export are non-destructive. The plugin does not upload project files, call AI services, use cloud services, or intentionally collect telemetry.</p></div>
+<section class="section" id="start-here">
+<p># Start Here</p>
+<p>UE Seller Preflight Kit is a local Unreal Engine 5 editor plugin for checking common project and code-plugin submission-readiness issues before you package your work.</p>
+<p>It is for Unreal Engine sellers, technical artists, solo developers, and small teams who want a practical local report for structure, metadata, naming, redirectors, documentation, listing support, and package hygiene.</p>
+<p>Version: 1.0.0 Publisher: Toolsmith Studio Support: toolsmithstudio@proton.me Tested environment: Windows / Win64 with Unreal Engine 5.7.4</p>
+<p>This plugin is independent and unofficial. It is not affiliated with Epic Games, Unreal Engine, or Fab. It does not guarantee Fab approval and does not replace the requirements published for Fab.</p>
+<h2>5-Step First Workflow</h2>
+<ol>
+<li>Install the plugin into your project <code>Plugins/UESellerPreflightKit</code> folder and enable it in Unreal Editor.</li>
+<li>Open <code>Tools &gt; UE Seller Preflight Kit</code>.</li>
+<li>Choose <code>Current Project</code>, <code>This Plugin</code>, or <code>Manual Path</code>.</li>
+<li>Click <code>Scan</code>, then select a result to read the details, suggested fix, and source reference.</li>
+<li>Choose an export folder and use <code>Export Markdown</code>, <code>Export CSV</code>, or <code>Export JSON</code>.</li>
+</ol>
+<h2>What To Read Next</h2>
 <ul>
-<li><a href="StartHere.html">StartHere</a> - short overview and first workflow.</li>
-<li><a href="QuickStart.html">QuickStart</a> - install, open, scan, inspect, and export.</li>
-<li><a href="RuleReference.html">RuleReference</a> - rule categories, severities, and examples.</li>
-<li><a href="KnownLimitations.html">KnownLimitations</a> - what the plugin does not verify.</li>
-<li><a href="Troubleshooting.html">Troubleshooting</a> - common install, scan, and export issues.</li>
-<li><a href="Support.html">Support</a> - support scope and contact information.</li>
-<li><a href="AITransparency.html">AITransparency</a> - AI-assisted development disclosure and runtime privacy notes.</li>
+<li>New user: read <a href="#quickstart">QuickStart</a>.</li>
+<li>Understanding results: read <a href="#rule-reference">RuleReference</a>.</li>
+<li>Something failed: read <a href="#troubleshooting">Troubleshooting</a>.</li>
+<li>Checking limits: read <a href="#known-limitations">KnownLimitations</a>.</li>
+<li>Support and trust: read <a href="#support">Support</a> and <a href="#ai-transparency">AITransparency</a>.</li>
 </ul>
-<h2>Safety And Privacy</h2>
-<p>Normal scan and export are non-destructive. The plugin does not upload project files, call AI services, use cloud services, or intentionally collect telemetry. Redirectors are reported in V1; use Unreal Editor's normal redirector cleanup workflow manually if a report identifies redirectors.</p>
-
+<h2>Safety Notes</h2>
+<ul>
+<li>Normal scan/export is non-destructive.</li>
+<li>The plugin does not upload files.</li>
+<li>The plugin does not call AI services.</li>
+<li>The plugin does not use cloud services.</li>
+<li>The plugin does not intentionally collect telemetry.</li>
+<li>Redirectors are report-only in V1; use Unreal Editor's normal Content Browser Fix Up Redirectors workflow manually.</li>
+<li>Documentation template generation is explicit, confirmation-gated, and refuses overwrites.</li>
+<li>Export overwrite requires user opt-in through <code>Allow overwrite</code>.</li>
+<li>Reports are guidance/checklists, not approval certificates.</li>
+</ul>
+</section>
+<section class="section" id="quickstart">
+<p># QuickStart</p>
+<p>This guide gets a first-time user from installation to an exported report.</p>
+<p>Version: 1.0.0 Publisher: Toolsmith Studio Support: toolsmithstudio@proton.me Tested environment: Windows / Win64 with Unreal Engine 5.7.4</p>
+<p>UE Seller Preflight Kit is unofficial and independent. It is not affiliated with Epic Games, Unreal Engine, or Fab. It does not guarantee Fab approval and does not replace the requirements published for Fab.</p>
+<p>The plugin runs locally inside Unreal Editor. It does not upload data, call AI services, use cloud services, or intentionally collect telemetry.</p>
+<h2>Install From A Packaged Plugin</h2>
+<ol>
+<li>Close Unreal Editor.</li>
+<li>Extract or copy the packaged plugin folder named <code>UESellerPreflightKit</code>.</li>
+<li>Put it here:</li>
+</ol>
+<pre><code>%PROJECT_ROOT%/Plugins/UESellerPreflightKit</code></pre>
+<ol>
+<li>Open your <code>.uproject</code> in Unreal Editor.</li>
+<li>If Unreal asks to rebuild modules, allow it only if you are set up to build C++ plugins.</li>
+<li>Open <code>Edit &gt; Plugins</code>.</li>
+<li>Search for <code>UE Seller Preflight Kit</code>.</li>
+<li>Enable the plugin.</li>
+<li>Restart Unreal Editor if prompted.</li>
+</ol>
+<h2>Install From A Project Plugins Folder</h2>
+<p>Use this when you are testing a local copy of the plugin source:</p>
+<ol>
+<li>Close Unreal Editor.</li>
+<li>Create a <code>Plugins</code> folder beside your <code>.uproject</code> if it does not exist.</li>
+<li>Copy the plugin folder into:</li>
+</ol>
+<pre><code>%PROJECT_ROOT%/Plugins/UESellerPreflightKit</code></pre>
+<ol>
+<li>Open the project in Unreal Editor.</li>
+<li>Enable <code>UE Seller Preflight Kit</code> in the Plugins window if needed.</li>
+<li>Restart when prompted.</li>
+</ol>
+<h2>First Scan In 5 Minutes</h2>
+<ol>
+<li>Open your project in Unreal Editor.</li>
+<li>Choose <code>Tools &gt; UE Seller Preflight Kit</code>.</li>
+<li>In <code>Scan scope</code>, choose one option:</li>
+</ol>
+<ul>
+<li><code>Current Project</code>: scan the currently open Unreal project root.</li>
+<li><code>This Plugin</code>: scan the installed UE Seller Preflight Kit plugin folder.</li>
+<li><code>Manual Path</code>: scan a typed project or plugin root path.</li>
+</ul>
+<ol>
+<li>If using <code>Manual Path</code>, type the root folder that contains the <code>.uproject</code> or <code>.uplugin</code>.</li>
+<li>Click <code>Scan</code>.</li>
+<li>Read the summary line. It shows total results plus Blocker, Error, Warning, and Info counts.</li>
+<li>Use <code>Severity</code> and <code>Category</code> filters to narrow the result list.</li>
+<li>Select a result row.</li>
+<li>Read the details panel:</li>
+</ol>
+<ul>
+<li>affected path</li>
+<li>details</li>
+<li>suggested fix</li>
+<li>source reference</li>
+</ul>
+<ol>
+<li>Choose an <code>Export folder</code>.</li>
+<li>Click <code>Export Markdown</code>, <code>Export CSV</code>, and <code>Export JSON</code> as needed.</li>
+</ol>
+<p>Normal scan/export does not modify project assets. It does not delete, rename, move, save packages, check out files, fix redirectors, or generate documentation templates.</p>
+<h2>Result Review</h2>
+<p>The results table shows:</p>
+<ul>
+<li><code>Severity</code></li>
+<li><code>Rule ID</code></li>
+<li><code>Title</code></li>
+<li><code>Affected Path</code></li>
+</ul>
+<p>The details panel shows the selected issue in more detail, including the suggested fix and source reference.</p>
+<p>Use <code>Copy Suggested Fix</code> to copy the suggested fix text to your clipboard.</p>
+<p>Use <code>Open Location</code> to open a local folder in your file browser. If the affected path is a file, the plugin opens the parent folder. Object paths such as <code>/Game/...</code> are not opened.</p>
+<p>Use <code>Generate Doc Template</code> only when a selected Documentation or Listing result points to a missing <code>.md</code>, <code>.markdown</code>, or <code>.txt</code> file. The plugin asks for confirmation, writes a clearly marked template, and refuses to overwrite an existing file.</p>
+<h2>Export Reports</h2>
+<p>Set <code>Export folder</code> before exporting. If the field is empty, the plugin uses a default folder under the project's <code>Saved</code> directory.</p>
+<p>Export files use this pattern:</p>
+<pre><code>UESellerPreflightKit_&lt;ScanLabel&gt;_&lt;Timestamp&gt;.&lt;extension&gt;</code></pre>
+<p>Formats:</p>
+<ul>
+<li>Markdown: human-readable review checklist.</li>
+<li>CSV: spreadsheet or audit triage.</li>
+<li>JSON: structured output for tooling.</li>
+</ul>
+<p>Existing files are not overwritten unless <code>Allow overwrite</code> is enabled. If a file already exists and <code>Allow overwrite</code> is off, export fails with a visible message.</p>
+<h2>Safety Notes</h2>
+<ul>
+<li>Generated reports are guidance/checklists, not approval certificates.</li>
+<li>Redirectors are report-only in V1. Use Unreal Editor's normal Content Browser Fix Up Redirectors workflow manually.</li>
+<li>Documentation template generation is explicit, confirmation-gated, and refuses overwrites.</li>
+<li>Export overwrite requires user opt-in through <code>Allow overwrite</code>.</li>
+<li>This plugin does not submit anything to Fab.</li>
+</ul>
+</section>
+<section class="section" id="rule-reference">
+<p># Rule Reference</p>
+<p>This reference explains the UE Seller Preflight Kit 1.0.0 rule categories. Exported reports are versioned guidance for the installed plugin version.</p>
+<p>Publisher: Toolsmith Studio Support: toolsmithstudio@proton.me Tested environment: Windows / Win64 with Unreal Engine 5.7.4</p>
+<p>UE Seller Preflight Kit is independent and unofficial. Results are local guidance only and do not guarantee Fab approval.</p>
+<h2>Severities</h2>
+<table><thead><tr><th>Severity</th><th>Meaning</th><th>Typical response</th></tr></thead><tbody><tr><td>Blocker</td><td>The scan target or input is unusable, or a manifest cannot be parsed.</td><td>Fix before relying on later results.</td></tr><tr><td>Error</td><td>A required structure or manifest issue is likely to block packaging or review readiness.</td><td>Fix before packaging a release candidate.</td></tr><tr><td>Warning</td><td>A hygiene, documentation, listing, or review issue needs attention.</td><td>Review and fix when relevant.</td></tr><tr><td>Info</td><td>Context or review reminder.</td><td>Read and decide whether action is needed.</td></tr></tbody></table>
+<h2>Rule Areas</h2>
+<table><thead><tr><th>Rule area</th><th>What it checks</th><th>Typical severity</th><th>Fix approach</th><th>Limitation</th></tr></thead><tbody><tr><td>Target classification</td><td>Whether the scan path exists and looks like an Unreal project or code plugin root.</td><td>Blocker for missing/invalid paths; Info for recognized targets.</td><td>Choose a folder containing a <code>.uproject</code> or <code>.uplugin</code>, or use <code>Current Project</code>.</td><td>Classification does not prove the product is ready; later rules handle details.</td></tr><tr><td>Structure</td><td>Required plugin/project layout. Code plugin structure checks include <code>.uplugin</code>, <code>Source</code>, <code>Content</code>, <code>Config</code>, and at least one code module. Content product checks include <code>.uproject</code>, <code>Content</code>, and <code>Config</code>; content should be under one top-level pack folder.</td><td>Error or Blocker for missing required items.</td><td>Add missing folders/manifests/modules manually and rescan.</td><td>It checks filesystem shape, not whether every asset inside is useful.</td></tr><tr><td>Metadata</td><td><code>.uplugin</code> JSON parsing, required metadata fields, module type, and <code>EnabledByDefault</code> review.</td><td>Blocker for invalid JSON; Error for missing modules or non-Editor module review; Warning for missing fields; Info for <code>EnabledByDefault</code>.</td><td>Fix the manifest in source control and rebuild/package.</td><td>It does not validate every possible Unreal plugin descriptor field.</td></tr><tr><td>Naming hygiene</td><td>File and folder names using ASCII letters, numbers, underscores, and hyphens; spaces; non-ASCII characters; invalid symbols; number-only names.</td><td>Warning.</td><td>Rename through Unreal Editor or normal source-control workflows so references stay intact.</td><td>It cannot fully judge English wording or descriptive intent.</td></tr><tr><td>Placeholder names</td><td>Obvious placeholder names such as <code>NewFolder</code>, <code>Untitled</code>, <code>Temp</code>, <code>Test</code>, <code>Copy</code>, <code>Placeholder</code>, <code>Example</code>, and <code>Default</code>.</td><td>Warning.</td><td>Replace placeholder names with specific product, feature, or asset names.</td><td>Some placeholder-like names may be intentional; review manually.</td></tr><tr><td>Redirectors</td><td><code>UObjectRedirector</code> assets discovered under scanned content package paths. Redirectors are packaging hygiene findings.</td><td>Warning.</td><td>Use Unreal Editor's normal Content Browser Fix Up Redirectors workflow manually after review.</td><td>V1 reports redirectors only. It does not fix, save, delete, or modify assets.</td></tr><tr><td>Folder hygiene</td><td>Empty folders and generated/output folders such as <code>Saved</code>, <code>Intermediate</code>, <code>DerivedDataCache</code>, <code>.vs</code>, <code>Binaries</code>, report folders, and packaged output folders.</td><td>Warning.</td><td>Review release package contents and remove accidental output manually outside the scan.</td><td>Empty folders can be intentional; the tool only flags them for review.</td></tr><tr><td>Documentation readiness</td><td>Expected buyer docs such as README, QuickStart, RuleReference or FeatureReference, Changelog, KnownIssues or KnownLimitations, support/contact information, and unofficial/no-guarantee wording.</td><td>Warning.</td><td>Add or complete documentation. Use <code>Generate Doc Template</code> only after selecting a documentation result and confirming the write.</td><td>The tool checks presence and basic text signals; it cannot judge full documentation quality.</td></tr><tr><td>Listing helpers</td><td>Demo script review, media checklist, technical details, and version notes. For Tools &amp; Plugins, a demo map is not required by default unless demonstrable elements exist.</td><td>Info or Warning.</td><td>Add review files such as <code>Docs/DemoScript.md</code>, <code>Listing/MediaChecklist.md</code>, <code>Listing/TechnicalDetails.md</code>, and <code>Listing/VersionNotes.md</code> when relevant.</td><td>These are listing-support reminders, not mandatory claims unless backed by current marketplace requirements.</td></tr></tbody></table>
+<h2>Appendix: Current Rule IDs</h2>
+<p>The current source includes these rule IDs:</p>
+<ul>
+<li><code>SPK.PATH.TARGET_CLASSIFICATION</code></li>
+<li><code>SPK.PATH.TARGET_MISSING</code></li>
+<li><code>SPK.PATH.TARGET_INVALID</code></li>
+<li><code>SPK.PATH.TARGET_UNCLASSIFIED</code></li>
+<li><code>SPK.STRUCTURE.REQUIRED_LAYOUT</code></li>
+<li><code>SPK.STRUCTURE.PLUGIN_MANIFEST</code></li>
+<li><code>SPK.STRUCTURE.PLUGIN_REQUIRED_DIRS</code></li>
+<li><code>SPK.STRUCTURE.PLUGIN_MODULE</code></li>
+<li><code>SPK.STRUCTURE.MODULE_LAYOUT</code></li>
+<li><code>SPK.STRUCTURE.PROJECT_MANIFEST</code></li>
+<li><code>SPK.STRUCTURE.PROJECT_REQUIRED_DIRS</code></li>
+<li><code>SPK.STRUCTURE.CONTENT_PACK_ROOT</code></li>
+<li><code>SPK.METADATA.UPLUGIN</code></li>
+<li><code>SPK.METADATA.UPLUGIN_JSON</code></li>
+<li><code>SPK.METADATA.UPLUGIN_REQUIRED_FIELDS</code></li>
+<li><code>SPK.METADATA.MODULE_TYPE</code></li>
+<li><code>SPK.METADATA.ENABLED_BY_DEFAULT</code></li>
+<li><code>SPK.HYGIENE.NAMING</code></li>
+<li><code>SPK.HYGIENE.PLACEHOLDER_NAME</code></li>
+<li><code>SPK.HYGIENE.REDIRECTOR</code></li>
+<li><code>SPK.HYGIENE.FOLDER</code></li>
+<li><code>SPK.HYGIENE.EMPTY_FOLDER</code></li>
+<li><code>SPK.HYGIENE.RELEASE_JUNK_FOLDER</code></li>
+<li><code>SPK.DOCS.READINESS</code></li>
+<li><code>SPK.DOCS.REQUIRED_FILES</code></li>
+<li><code>SPK.DOCS.SUPPORT_CONTACT</code></li>
+<li><code>SPK.DOCS.UNOFFICIAL_DISCLAIMER</code></li>
+<li><code>SPK.LISTING.READINESS</code></li>
+<li><code>SPK.LISTING.DEMO_REVIEW</code></li>
+<li><code>SPK.LISTING.SUPPORT_FILES</code></li>
+</ul>
+<h2>Source References</h2>
+<p>Every result includes a source reference. References may point to:</p>
+<ul>
+<li><code>Docs/RuleReference.md</code></li>
+<li><code>Docs/RuleSources.md</code></li>
+<li><code>Docs/KnownLimitations.md</code></li>
+<li><code>Docs/Troubleshooting.md</code></li>
+</ul>
+<p>Where rules mention marketplace requirements, the wording is summarized in <code>Docs/RuleSources.md</code>. Always verify current public requirements before submission.</p>
+</section>
+<section class="section" id="rule-sources">
+<p># Rule Sources</p>
+<p>Version: 1.0.0 Publisher: Toolsmith Studio Support: toolsmithstudio@proton.me Tested environment: Windows / Win64 with Unreal Engine 5.7.4</p>
+<p>Every scan result includes a source reference. A source reference tells you which buyer-facing note explains why the finding exists and how to interpret it.</p>
+<p>Source references are not approval certificates. They are short pointers for review. Always verify current marketplace requirements before final submission.</p>
+<h2>Source Reference Files</h2>
+<ul>
+<li><code>Docs/RuleReference.md</code>: rule categories, severities, examples, safe fix approach, and current rule IDs.</li>
+<li><code>Docs/RuleSources.md</code>: public-requirement areas and how the plugin uses them.</li>
+<li><code>Docs/KnownLimitations.md</code>: product limits, heuristic checks, and report-only behavior.</li>
+<li><code>Docs/Troubleshooting.md</code>: practical scan/export failure handling.</li>
+</ul>
+<h2>Public Requirement Areas Used By V1</h2>
+<p>The V1 checks are based on public Unreal Engine marketplace/Fab preparation themes recorded for this product:</p>
+<table><thead><tr><th>Area</th><th>How the plugin uses it</th></tr></thead><tbody><tr><td>Code plugin structure</td><td>Code plugin roots are expected to have a <code>.uplugin</code>, <code>Source/</code>, <code>Content/</code>, <code>Config/</code>, and at least one code module.</td></tr><tr><td>Content project structure</td><td>Content product candidates are expected to be Unreal projects with <code>.uproject</code>, <code>Content/</code>, and <code>Config/</code>.</td></tr><tr><td>Pack folder organization</td><td>Content products are easier to review and package when product content sits under one top-level pack folder.</td></tr><tr><td>Plugin metadata</td><td><code>.uplugin</code> files should parse as JSON and contain clear name, description, category, version, and module metadata.</td></tr><tr><td>Naming hygiene</td><td>File and folder names should be consistent, descriptive, and safe for Unreal workflows. The plugin flags spaces, non-ASCII names, unusual symbols, numeric-only names, and obvious placeholders for review.</td></tr><tr><td>Redirectors</td><td>Redirector assets are packaging hygiene findings. V1 reports them only and tells users to use Unreal Editor's normal fix-up workflow manually.</td></tr><tr><td>Documentation readiness</td><td>Buyer/reviewer docs should explain installation, usage, rules/features, limitations, support, and version changes.</td></tr><tr><td>Listing support</td><td>Media checklists, technical details, version notes, and demo/overview notes help prepare a clear listing. Some listing helpers are review prompts, not mandatory claims.</td></tr></tbody></table>
+<h2>Safe Interpretation</h2>
+<ul>
+<li>Blockers and errors should be reviewed before packaging a release candidate.</li>
+<li>Warnings are review prompts. Some may be acceptable after manual review.</li>
+<li>Info results provide context or reminders.</li>
+<li>Suggested fixes are intentionally non-destructive. The plugin does not delete, rename, move, save, or fix assets automatically during scan/export.</li>
+</ul>
+</section>
+<section class="section" id="known-limitations">
+<p># Known Limitations</p>
+<p>Version: 1.0.0 Publisher: Toolsmith Studio Support: toolsmithstudio@proton.me Tested environment: Windows / Win64 with Unreal Engine 5.7.4</p>
+<p>UE Seller Preflight Kit is independent and unofficial. It is not affiliated with Epic Games, Unreal Engine, or Fab. It does not guarantee approval and does not replace the current requirements published by the marketplace.</p>
+<p>The plugin runs locally in Unreal Editor. Normal scan/export does not modify assets or packages. The plugin does not upload project files, call AI services, use cloud services, or intentionally collect telemetry.</p>
+<h2>Product Limits</h2>
+<ul>
+<li>Generated reports are guidance/checklists, not approval certificates.</li>
+<li>The plugin does not submit listings or upload project files.</li>
+<li>Documentation and listing checks are heuristic. They can tell whether expected files or text signals exist, but they cannot judge whether every document is complete or persuasive.</li>
+<li>Naming checks can find spaces, non-ASCII names, symbols, numeric-only names, and obvious placeholder names. They cannot fully judge whether a name is descriptive English.</li>
+<li>Redirectors are report-only in V1. Use Unreal Editor's normal Content Browser Fix Up Redirectors workflow manually after reviewing the warning.</li>
+<li>The plugin does not judge listing media quality, image composition, trailer quality, or marketing strength.</li>
+<li>The plugin does not detect legal, licensing, trademark, copyright, tax, payout, or account issues.</li>
+<li>The plugin does not determine whether every asset is unused.</li>
+<li><code>Open Location</code> supports local file/folder paths only. Object paths such as <code>/Game/...</code> are not opened.</li>
+<li><code>Generate Doc Template</code> creates starter text only after confirmation and refuses overwrites. Replace template text with product-specific information before release.</li>
+</ul>
+<h2>How To Use These Limits</h2>
+<p>Treat findings as a structured review pass before packaging/submission. Fix clear structure and manifest issues first, then use warnings as prompts for manual review. Always compare final decisions against current marketplace requirements.</p>
+</section>
+<section class="section" id="troubleshooting">
+<p># Troubleshooting</p>
+<p>Version: 1.0.0 Publisher: Toolsmith Studio Support: toolsmithstudio@proton.me Tested environment: Windows / Win64 with Unreal Engine 5.7.4</p>
+<p>UE Seller Preflight Kit runs locally inside Unreal Editor. It does not upload files, call AI services, use cloud services, or intentionally collect telemetry.</p>
+<p>UE Seller Preflight Kit is independent and unofficial. It is not affiliated with Epic Games, Unreal Engine, or Fab, and it does not guarantee Fab approval.</p>
+<h2>Plugin Does Not Appear In Tools Menu</h2>
+<p>Check:</p>
+<ol>
+<li>The plugin folder is under <code>%PROJECT_ROOT%/Plugins/UESellerPreflightKit</code>.</li>
+<li><code>UESellerPreflightKit.uplugin</code> exists inside that folder.</li>
+<li>The plugin is enabled in <code>Edit &gt; Plugins</code>.</li>
+<li>Unreal Editor was restarted after enabling if prompted.</li>
+<li>The plugin was built for your Unreal Engine version.</li>
+</ol>
+<p>Expected menu path:</p>
+<pre><code>Tools &gt; UE Seller Preflight Kit</code></pre>
+<h2>Scan Returns No Results</h2>
+<p>No results can be valid for a very clean target, but most scans usually include at least the target classification Info result. Check that:</p>
+<ul>
+<li>You clicked <code>Scan</code>.</li>
+<li>The selected scope points at the intended project/plugin root.</li>
+<li>Filters are not hiding results. Set <code>Severity</code> to <code>All Severities</code> and <code>Category</code> to <code>All Categories</code>.</li>
+<li>The target path contains a <code>.uproject</code> or <code>.uplugin</code>.</li>
+</ul>
+<h2>Manual Path Scan Fails</h2>
+<p><code>Manual Path</code> accepts a project/plugin root folder, a <code>.uproject</code>, or a <code>.uplugin</code>.</p>
+<p>If the scan returns a Blocker:</p>
+<ul>
+<li>Confirm the path exists.</li>
+<li>Confirm it is not a random file.</li>
+<li>Confirm the folder contains a top-level <code>.uproject</code> or <code>.uplugin</code>.</li>
+<li>Avoid pointing at <code>Content</code>, <code>Source</code>, or an individual asset file.</li>
+</ul>
+<h2>Export Folder Cannot Be Created</h2>
+<p>The plugin creates the export folder if possible. If export fails:</p>
+<ul>
+<li>Choose a folder where your user account can write.</li>
+<li>Avoid protected engine install folders.</li>
+<li>Try a folder under the project <code>Saved</code> directory or another local report folder.</li>
+<li>Check whether antivirus or file-locking software blocked the write.</li>
+</ul>
+<h2>Export Refused Because File Exists</h2>
+<p>Export files are not overwritten by default. If the UI says a file already exists:</p>
+<ul>
+<li>Pick a different export folder, or</li>
+<li>enable <code>Allow overwrite</code>, then export again.</li>
+</ul>
+<p>Only enable <code>Allow overwrite</code> when you are comfortable replacing the previous report file.</p>
+<h2>JSON Export Validation Fails</h2>
+<p>The plugin validates generated JSON before writing. If JSON export fails:</p>
+<ul>
+<li>Try exporting again after a new scan.</li>
+<li>Export Markdown and CSV to preserve the current result set.</li>
+<li>Record the visible export status text.</li>
+<li>Send support information listed in <a href="#support">Support</a>.</li>
+</ul>
+<h2>Redirector Warning Appears</h2>
+<p>Redirector warnings mean the Asset Registry found redirector objects under scanned content paths.</p>
+<p>V1 report behavior:</p>
+<ul>
+<li>The plugin reports redirectors only.</li>
+<li>It does not fix redirectors.</li>
+<li>It does not save packages.</li>
+<li>It does not delete assets.</li>
+</ul>
+<p>Manual fix approach: use Unreal Editor's normal Content Browser Fix Up Redirectors workflow after reviewing the affected content.</p>
+<h2>Documentation Warnings Appear</h2>
+<p>Documentation warnings mean expected buyer/reviewer files were missing or missing basic support/disclaimer text.</p>
+<p>Use <code>Generate Doc Template</code> only after selecting a Documentation or Listing result. The plugin asks for confirmation, creates a template file, and refuses to overwrite existing files.</p>
+<p>Templates are starting points. Replace all placeholder text before release.</p>
+<h2>Results Seem Noisy</h2>
+<p>Try this:</p>
+<ul>
+<li>Use <code>Severity</code> to focus on Blocker and Error results first.</li>
+<li>Use <code>Category</code> to inspect one rule category at a time.</li>
+<li>Read the source reference before changing files.</li>
+<li>Treat Documentation and Listing warnings as review prompts, not automatic failures.</li>
+<li>Keep naming warnings manual. The plugin cannot fully judge descriptive English names.</li>
+</ul>
+<h2>UE Version Or Build Issues</h2>
+<p>Current plugin version is <code>1.0.0</code>. If the plugin cannot build or load:</p>
+<ul>
+<li>Confirm the Unreal Engine version used to build the package. Version 1.0.0 was tested on Windows / Win64 with Unreal Engine 5.7.4.</li>
+<li>Confirm Visual Studio Build Tools are installed if you need to compile C++.</li>
+<li>Rebuild the plugin with the same UE version used by the project.</li>
+</ul>
+<h2>Where To Send Support Info</h2>
+<p>Send support requests to Toolsmith Studio at toolsmithstudio@proton.me. Include:</p>
+<ul>
+<li>UE version.</li>
+<li>Plugin version.</li>
+<li>Operating system.</li>
+<li>Target type: project, code plugin, or manual path.</li>
+<li>Exported Markdown/CSV/JSON reports if available.</li>
+<li>Screenshots of the window and error/status text.</li>
+<li>Steps to reproduce.</li>
+</ul>
+<p>Support is for the plugin workflow and plugin defects. It is not a promise of Fab approval.</p>
+</section>
+<section class="section" id="support">
+<p># Support</p>
+<p>Support is for UE Seller Preflight Kit installation, scanning, export behavior, documentation, and bug reports. It is not support for guaranteeing Fab approval.</p>
+<p>UE Seller Preflight Kit is independent and unofficial. It is not affiliated with Epic Games, Unreal Engine, or Fab.</p>
+<p>Publisher: Toolsmith Studio</p>
+<p>Support email: toolsmithstudio@proton.me</p>
+<p>Version: 1.0.0</p>
+<p>Tested environment: Windows / Win64 with Unreal Engine 5.7.4</p>
+<p>Toolsmith Studio creates practical Unreal Engine editor tools for creators, technical artists, and small teams. The focus is on local workflows, clear documentation, safe tooling, and repeatable checks that reduce friction during development and packaging.</p>
+<h2>Support Covers</h2>
+<ul>
+<li>Plugin installation questions.</li>
+<li>Plugin enable/load problems.</li>
+<li>Scan errors.</li>
+<li>Unexpected result wording.</li>
+<li>Export failures.</li>
+<li>JSON/CSV/Markdown report issues.</li>
+<li>Documentation template generation issues.</li>
+<li>Reproducible crashes related to this plugin.</li>
+</ul>
+<h2>Support Does Not Cover</h2>
+<ul>
+<li>Approval promises.</li>
+<li>Fab account, tax, payout, or listing administration.</li>
+<li>Legal, trademark, copyright, or licensing advice.</li>
+<li>Rewriting your product documentation.</li>
+<li>Fixing all project content issues for you.</li>
+<li>Automatic asset cleanup.</li>
+<li>Unreal Engine issues unrelated to this plugin.</li>
+</ul>
+<h2>Information To Provide</h2>
+<p>Include as much of this as possible:</p>
+<ul>
+<li>Unreal Engine version.</li>
+<li>UE Seller Preflight Kit version.</li>
+<li>Operating system.</li>
+<li>Whether the target is <code>Current Project</code>, <code>This Plugin</code>, or <code>Manual Path</code>.</li>
+<li>Target type: code plugin, content project, or other.</li>
+<li>Exported Markdown, CSV, or JSON report if available.</li>
+<li>Screenshot of the plugin window.</li>
+<li>Any visible status/error text.</li>
+<li>Steps to reproduce.</li>
+<li>Whether the issue happens in a clean test project.</li>
+</ul>
+<h2>Privacy And Local Data</h2>
+<p>The plugin runs locally. It does not upload project files, call AI services, use cloud services, or intentionally collect telemetry. Only send reports or screenshots to support if you choose to share them.</p>
+</section>
+<section class="section" id="ai-transparency">
+<p># AI Transparency</p>
+<p>AI-assisted engineering tools were used during development of UE Seller Preflight Kit.</p>
+<p>Version: 1.0.0 Publisher: Toolsmith Studio Support: toolsmithstudio@proton.me Tested environment: Windows / Win64 with Unreal Engine 5.7.4</p>
+<p>UE Seller Preflight Kit is independent and unofficial. It is not affiliated with Epic Games, Unreal Engine, or Fab, and it does not guarantee Fab approval.</p>
+<p>The shipped plugin itself does not:</p>
+<ul>
+<li>call AI services</li>
+<li>upload project files</li>
+<li>use cloud inference</li>
+<li>use cloud services</li>
+<li>intentionally collect telemetry</li>
+</ul>
+<p>The plugin is a local Unreal Editor workflow: it scans local project/plugin structure, creates rule results, shows those results in Slate UI, and exports Markdown, CSV, and JSON reports.</p>
+<h2>What Buyers Are Paying For</h2>
+<p>Buyers are paying for the tested, curated workflow:</p>
+<ul>
+<li>source-backed rule categories</li>
+<li>deterministic scan results</li>
+<li>readable UI triage</li>
+<li>safe suggested fixes</li>
+<li>report exports</li>
+<li>documentation</li>
+<li>known limitations</li>
+<li>support for plugin behavior</li>
+</ul>
+<p>They are not paying for hidden AI behavior inside Unreal Editor. There is no AI assistant, AI scan, or cloud inference in the plugin.</p>
+<h2>Testing And Review</h2>
+<p>Version 1.0.0 was checked through Unreal build and automation workflows, fixture-style scans, report export checks, actionability checks, and manual editor workflow review.</p>
+<p>These checks support the shipped workflow, but they do not turn generated reports into approval certificates. Always compare findings against the current requirements published by the marketplace.</p>
+</section>
+<section class="section" id="changelog">
+<p># Changelog</p>
+<h2>1.0.0</h2>
+<p>Initial buyer-facing release of UE Seller Preflight Kit.</p>
+<p>Publisher: Toolsmith Studio Support: toolsmithstudio@proton.me Tested environment: Windows / Win64 with Unreal Engine 5.7.4</p>
+<p>Included:</p>
+<ul>
+<li>Editor-only Unreal Engine plugin with <code>Tools &gt; UE Seller Preflight Kit</code> menu entry.</li>
+<li>Local scan workflow for <code>Current Project</code>, <code>This Plugin</code>, and <code>Manual Path</code>.</li>
+<li>Result summary, severity/category filters, result table, details panel, suggested fixes, and source references.</li>
+<li>V1 rule categories:</li>
+<li>target classification</li>
+<li>required structure</li>
+<li><code>.uplugin</code> metadata</li>
+<li>naming hygiene</li>
+<li>redirectors</li>
+<li>folder hygiene</li>
+<li>documentation readiness</li>
+<li>listing helpers</li>
+<li>Markdown, CSV, and JSON report exports.</li>
+<li>Safe helper actions for copying suggested fixes, opening affected folders, and confirmation-gated documentation template generation.</li>
+<li>Buyer documentation for install, use, rules, troubleshooting, support, known limits, and AI transparency.</li>
+</ul>
+<h2>Important Limits</h2>
+<ul>
+<li>UE Seller Preflight Kit is unofficial and independent.</li>
+<li>It is not affiliated with Epic Games, Unreal Engine, or Fab.</li>
+<li>It does not guarantee Fab approval.</li>
+<li>It does not upload data, call AI services, use cloud services, or intentionally collect telemetry.</li>
+<li>Redirectors are report-only in V1 and must be fixed manually through Unreal Editor if needed.</li>
+</ul>
+</section>
+<div class="footer">Independent Toolsmith Studio documentation. No affiliation with Epic Games, Unreal Engine, or Fab. No approval guarantee.</div>
 </main>
+</div>
 </body>
 </html>

@@ -3,15 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KnownLimitations | UE Seller Preflight Kit</title>
+<meta name="theme-color" content="#050608">
+<title>Known Limitations | UE Seller Preflight Kit</title>
 <style>
-:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#050608;color:#d7dde7;font-family:Segoe UI,Arial,sans-serif;line-height:1.58}.page{max-width:980px;margin:0 auto;padding:42px 22px 72px}.top{border-bottom:1px solid #28303a;margin-bottom:28px;padding-bottom:18px}.top a{color:#58a6ff;text-decoration:none}.top a:hover{text-decoration:underline}h1,h2,h3,h4{color:#f4f7fb;line-height:1.22}h1{font-size:2.05rem;margin:0 0 12px}h2{margin-top:34px;border-bottom:1px solid #28303a;padding-bottom:8px}h3{margin-top:26px}p{margin:13px 0}a{color:#58a6ff}a:hover{color:#8cc7ff}ul,ol{padding-left:25px}li{margin:7px 0}code{background:#161b22;color:#f0f6fc;border:1px solid #28303a;border-radius:4px;padding:1px 5px}pre{background:#0d1117;border:1px solid #303845;border-radius:7px;overflow:auto;padding:14px}pre code{background:transparent;border:0;padding:0}.note{border:1px solid #303845;background:#10141b;border-radius:8px;padding:14px 16px}table{border-collapse:collapse;width:100%;margin:18px 0;background:#0b0f14}th,td{border:1px solid #303845;padding:9px 10px;vertical-align:top}th{background:#101824;color:#f4f7fb}tr:nth-child(even) td{background:#10141b}blockquote{border-left:4px solid #303845;color:#aab4c3;margin:18px 0;padding:4px 0 4px 16px}.footer{margin-top:42px;border-top:1px solid #28303a;padding-top:16px;color:#8b949e;font-size:.92rem}@media(max-width:720px){.page{padding:28px 16px 54px}h1{font-size:1.65rem}table{font-size:.92rem}}
+:root{color-scheme:dark;background:#050608}html{background:#050608;scroll-behavior:smooth}*{box-sizing:border-box}body{margin:0;background:#050608;color:#d7dde7;font-family:Segoe UI,Arial,sans-serif;line-height:1.58}.layout{display:grid;grid-template-columns:260px minmax(0,1fr);min-height:100vh}.sidebar{position:sticky;top:0;height:100vh;overflow:auto;border-right:1px solid #28303a;background:#080a0e;padding:26px 20px}.brand{font-weight:700;color:#f4f7fb;font-size:1.05rem;line-height:1.25;margin-bottom:18px}.nav a{display:block;color:#9dc9ff;text-decoration:none;padding:7px 0;border-bottom:1px solid transparent}.nav a:hover{color:#d6ecff;border-bottom-color:#303845}.content{max-width:1040px;padding:42px 34px 78px}.hero{border:1px solid #303845;background:#10141b;border-radius:10px;padding:22px 24px;margin-bottom:34px}.section{padding-top:18px;margin-top:22px;border-top:1px solid #28303a}h1,h2,h3,h4{color:#f4f7fb;line-height:1.22}h1{font-size:2.1rem;margin:0 0 12px}h2{margin-top:32px;padding-bottom:8px}h3{margin-top:26px}p{margin:13px 0}a{color:#58a6ff}a:hover{color:#8cc7ff}ul,ol{padding-left:25px}li{margin:7px 0}code{background:#161b22;color:#f0f6fc;border:1px solid #28303a;border-radius:4px;padding:1px 5px}pre{background:#0d1117;border:1px solid #303845;border-radius:7px;overflow:auto;padding:14px}pre code{background:transparent;border:0;padding:0}.note{border:1px solid #303845;background:#10141b;border-radius:8px;padding:14px 16px}table{border-collapse:collapse;width:100%;margin:18px 0;background:#0b0f14}th,td{border:1px solid #303845;padding:9px 10px;vertical-align:top}th{background:#101824;color:#f4f7fb}tr:nth-child(even) td{background:#10141b}blockquote{border-left:4px solid #303845;color:#aab4c3;margin:18px 0;padding:4px 0 4px 16px}.footer{margin-top:42px;border-top:1px solid #28303a;padding-top:16px;color:#8b949e;font-size:.92rem}@media(max-width:880px){.layout{display:block}.sidebar{position:relative;height:auto;border-right:0;border-bottom:1px solid #28303a}.nav{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0 16px}.content{padding:30px 18px 58px}h1{font-size:1.7rem}table{font-size:.92rem}}
 </style>
 </head>
 <body>
-<main class="page">
-<div class="top"><a href="index.html">UE Seller Preflight Kit Documentation</a></div>
-<p># Known Limitations</p>
+<div class="layout">
+<aside class="sidebar">
+<div class="brand">UE Seller Preflight Kit<br>Documentation</div>
+<nav class="nav"><a href="index.html#start-here">Start Here</a>
+<a href="index.html#quickstart">QuickStart</a>
+<a href="index.html#rule-reference">Rule Reference</a>
+<a href="index.html#rule-sources">Rule Sources</a>
+<a href="index.html#known-limitations">Known Limitations</a>
+<a href="index.html#troubleshooting">Troubleshooting</a>
+<a href="index.html#support">Support</a>
+<a href="index.html#ai-transparency">AI Transparency</a>
+<a href="index.html#changelog">Changelog</a></nav>
+</aside>
+<main class="content">
+<section class="section" id="known-limitations"><p># Known Limitations</p>
 <p>Version: 1.0.0 Publisher: Toolsmith Studio Support: toolsmithstudio@proton.me Tested environment: Windows / Win64 with Unreal Engine 5.7.4</p>
 <p>UE Seller Preflight Kit is independent and unofficial. It is not affiliated with Epic Games, Unreal Engine, or Fab. It does not guarantee approval and does not replace the current requirements published by the marketplace.</p>
 <p>The plugin runs locally in Unreal Editor. Normal scan/export does not modify assets or packages. The plugin does not upload project files, call AI services, use cloud services, or intentionally collect telemetry.</p>
@@ -29,8 +42,9 @@
 <li><code>Generate Doc Template</code> creates starter text only after confirmation and refuses overwrites. Replace template text with product-specific information before release.</li>
 </ul>
 <h2>How To Use These Limits</h2>
-<p>Treat findings as a structured review pass before packaging/submission. Fix clear structure and manifest issues first, then use warnings as prompts for manual review. Always compare final decisions against current marketplace requirements.</p>
+<p>Treat findings as a structured review pass before packaging/submission. Fix clear structure and manifest issues first, then use warnings as prompts for manual review. Always compare final decisions against current marketplace requirements.</p></section>
 <div class="footer">Independent Toolsmith Studio documentation. No affiliation with Epic Games, Unreal Engine, or Fab. No approval guarantee.</div>
 </main>
+</div>
 </body>
 </html>
